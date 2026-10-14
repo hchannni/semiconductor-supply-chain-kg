@@ -1,0 +1,108 @@
+{
+  "snapshot_date": "2026-10-13",
+  "precision": {
+    "model": "openai/gpt-oss-120b",
+    "provider": "Groq",
+    "prompt_version": "edgecheck-v3",
+    "temperature": 0,
+    "reasoning_effort": "low",
+    "sampling": "relation/source-stratified; unweighted sample proportions",
+    "n": 505,
+    "labels": {
+      "yes": 410,
+      "partly": 14,
+      "no": 81
+    },
+    "strict": 0.8118811881188119,
+    "yes_or_partly": 0.8396039603960396,
+    "strict_wilson_ci95": [
+      0.775,
+      0.844
+    ],
+    "by_relation": {
+      "BELONGS_TO_STAGE": {
+        "n": 23,
+        "precision": 0.565,
+        "ci95": [
+          0.368,
+          0.744
+        ]
+      },
+      "LOCATED_IN": {
+        "n": 68,
+        "precision": 0.956,
+        "ci95": [
+          0.878,
+          0.985
+        ]
+      },
+      "OPERATES_IN": {
+        "n": 70,
+        "precision": 0.957,
+        "ci95": [
+          0.881,
+          0.985
+        ]
+      },
+      "PARTNERS_WITH": {
+        "n": 69,
+        "precision": 0.87,
+        "ci95": [
+          0.77,
+          0.93
+        ]
+      },
+      "PROVIDES": {
+        "n": 71,
+        "precision": 0.817,
+        "ci95": [
+          0.712,
+          0.89
+        ]
+      },
+      "SUBSIDIARY_OF": {
+        "n": 72,
+        "precision": 0.75,
+        "ci95": [
+          0.639,
+          0.836
+        ]
+      },
+      "SUPPLIES_TO": {
+        "n": 68,
+        "precision": 0.647,
+        "ci95": [
+          0.528,
+          0.75
+        ]
+      },
+      "USES": {
+        "n": 64,
+        "precision": 0.766,
+        "ci95": [
+          0.649,
+          0.853
+        ]
+      }
+    }
+  },
+  "eto": {
+    "status": "complete",
+    "protocol": "eto-pairwise-v3.1-qualification-validation",
+    "provider": "OpenRouter / Groq",
+    "model": "openai/gpt-oss-120b",
+    "reference_companies": 28,
+    "n": 128,
+    "states": {
+      "confirmed_strict": 70,
+      "no_match": 6,
+      "broader_only": 52
+    },
+    "confirmed_strict_hits": 70,
+    "strict_recall": 0.546875,
+    "graded_recall": 0.75,
+    "broader_inclusive_hits": 122,
+    "broader_inclusive_coverage": 0.953125,
+    "unresolved_cases": 0
+  }
+}

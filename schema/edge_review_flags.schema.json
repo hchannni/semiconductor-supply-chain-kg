@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "edge_review_flags.jsonl record",
+  "type": "object",
+  "required": [
+    "all_support_claims_verified",
+    "edge_id",
+    "unresolved_evidence_candidates",
+    "historical_context_flagged",
+    "independence_verified",
+    "time_or_scope_review_required"
+  ],
+  "properties": {
+    "all_support_claims_verified": {
+      "type": "boolean",
+      "description": "Review flag; false also includes claims not fully reviewed."
+    },
+    "edge_id": {
+      "type": "string",
+      "description": "Identifier for a fused relation."
+    },
+    "unresolved_evidence_candidates": {
+      "type": "integer",
+      "description": "Number of associated evidence candidates whose support was insufficient to add them to the relation."
+    },
+    "historical_context_flagged": {
+      "type": "boolean",
+      "description": "The relation involves a historical event; do not assume it describes the current situation."
+    },
+    "independence_verified": {
+      "type": "boolean",
+      "description": "Whether source independence was established, not assumed."
+    },
+    "time_or_scope_review_required": {
+      "type": "boolean",
+      "description": "True when a retained review flag requires time/scope interpretation."
+    }
+  },
+  "additionalProperties": false
+}

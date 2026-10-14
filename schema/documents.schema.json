@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "documents.jsonl record",
+  "type": "object",
+  "required": [
+    "company_id",
+    "document_id",
+    "publication_date",
+    "retrieved_at",
+    "source",
+    "source_url"
+  ],
+  "properties": {
+    "accession_number": {
+      "type": "string",
+      "description": "SEC filing accession number."
+    },
+    "cik": {
+      "type": "string",
+      "description": "Optional SEC CIK string; retain leading zeroes."
+    },
+    "company": {
+      "type": "string",
+      "description": "SEC company display name."
+    },
+    "company_id": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "description": "Document owner/subject hint; nullable and not necessarily every company mentioned in the document."
+    },
+    "content_hash": {
+      "type": "string",
+      "description": "Original collector content fingerprint; not a checksum for this public file."
+    },
+    "document_id": {
+      "type": "string",
+      "description": "Document identifier used to join provenance."
+    },
+    "filing_date": {
+      "type": "string",
+      "description": "SEC filing date."
+    },
+    "filing_type": {
+      "type": "string",
+      "description": "SEC form type."
+    },
+    "page_title": {
+      "type": "string",
+      "description": "Wikipedia page title."
+    },
+    "publication_date": {
+      "type": "string",
+      "description": "Source observation date as recorded; empty string means unknown, not current validity."
+    },
+    "retrieved_at": {
+      "type": "string",
+      "description": "Recorded source retrieval timestamp."
+    },
+    "source": {
+      "type": "string",
+      "description": "Claims use uppercase SEC/WIKIPEDIA; documents retain lowercase sec/wikipedia.",
+      "enum": [
+        "sec",
+        "wikipedia"
+      ]
+    },
+    "source_url": {
+      "type": "string",
+      "description": "Original source URL; availability is not checked by this package."
+    },
+    "ticker": {
+      "type": "string",
+      "description": "Optional issuer ticker."
+    }
+  },
+  "additionalProperties": false
+}

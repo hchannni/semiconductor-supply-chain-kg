@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "canonical_entities.jsonl record",
+  "type": "object",
+  "required": [
+    "aliases",
+    "canonical_name",
+    "entity_id",
+    "entity_type"
+  ],
+  "properties": {
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Alternate labels retained by normalization; not guaranteed globally unique."
+    },
+    "canonical_name": {
+      "type": "string",
+      "description": "Canonical display label; not a unique key."
+    },
+    "cik": {
+      "type": "string",
+      "description": "Optional SEC CIK string; retain leading zeroes."
+    },
+    "description": {
+      "type": "string",
+      "description": "Optional entity description, sometimes containing a parent category and family definition."
+    },
+    "entity_id": {
+      "type": "string",
+      "description": "Stable identifier within this snapshot; join edges to this field."
+    },
+    "entity_type": {
+      "type": "string",
+      "description": "Node class; offering families retain Input, Product or Technology classes.",
+      "enum": [
+        "Company",
+        "Country",
+        "Facility",
+        "Input",
+        "Product",
+        "SupplyChainStage",
+        "Technology"
+      ]
+    },
+    "ticker": {
+      "type": "string",
+      "description": "Optional issuer ticker."
+    }
+  },
+  "additionalProperties": false
+}

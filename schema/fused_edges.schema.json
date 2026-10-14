@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "fused_edges.jsonl record",
+  "type": "object",
+  "required": [
+    "claim_ids",
+    "confidence",
+    "conflict",
+    "edge_id",
+    "group_type",
+    "layer",
+    "object",
+    "relation",
+    "source_count",
+    "source_types",
+    "sources",
+    "subject"
+  ],
+  "properties": {
+    "claim_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Supporting claim_id values; join claim_provenance.jsonl."
+    },
+    "confidence": {
+      "type": "string",
+      "description": "Heuristic HIGH/MEDIUM/LOW label; not a calibrated correctness probability.",
+      "enum": [
+        "HIGH",
+        "LOW",
+        "MEDIUM"
+      ]
+    },
+    "conflict": {
+      "type": "boolean",
+      "description": "A limited rule-based conflict flag; false does not establish truth."
+    },
+    "conflict_type": {
+      "type": "string",
+      "description": "Optional attribute or relation conflict category."
+    },
+    "conflict_with": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Optional edge ID(s) involved in the conflict."
+    },
+    "edge_id": {
+      "type": "string",
+      "description": "Identifier for a fused relation."
+    },
+    "first_seen": {
+      "type": "string",
+      "description": "Earliest supporting SEC claim publication date; not relation validity start."
+    },
+    "group_type": {
+      "type": "string",
+      "description": "Fusion bookkeeping classification; see group definitions below.",
+      "enum": [
+        "COMPLEMENTARY",
+        "CONFLICT",
+        "DUPLICATE",
+        "SINGLE_SOURCE",
+        "SUPPORT"
+      ]
+    },
+    "last_seen": {
+      "type": "string",
+      "description": "Latest supporting SEC claim publication date; not relation validity end."
+    },
+    "layer": {
+      "type": "string",
+      "description": "core/extended export classification; extended is not a correctness judgement.",
+      "enum": [
+        "core",
+        "extended"
+      ]
+    },
+    "object": {
+      "type": "string",
+      "description": "Object entity_id."
+    },
+    "relation": {
+      "type": "string",
+      "description": "Predicate; direction is described in the relation table.",
+      "enum": [
+        "BELONGS_TO_STAGE",
+        "LOCATED_IN",
+        "OPERATES_IN",
+        "PARTNERS_WITH",
+        "PROVIDES",
+        "SUBSIDIARY_OF",
+        "SUPPLIES_TO",
+        "USES"
+      ]
+    },
+    "source_count": {
+      "type": "integer",
+      "description": "Number of distinct supporting documents; not the number of source families."
+    },
+    "source_types": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "SEC",
+          "WIKIPEDIA"
+        ]
+      },
+      "description": "Supporting source families: SEC and/or WIKIPEDIA."
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Unique supporting document_id values, not URLs."
+    },
+    "subject": {
+      "type": "string",
+      "description": "Subject entity_id."
+    }
+  },
+  "additionalProperties": false
+}

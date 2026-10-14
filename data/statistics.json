@@ -1,0 +1,39 @@
+{
+  "snapshot": "2026-10-13",
+  "packaged_on": "2026-10-14",
+  "entities": 1598,
+  "relations": 2988,
+  "claims": 6417,
+  "documents": 129,
+  "both_source_relations": 589,
+  "by_entity_type": {
+    "Company": 780,
+    "Country": 48,
+    "Facility": 107,
+    "Input": 425,
+    "Product": 159,
+    "SupplyChainStage": 3,
+    "Technology": 76
+  },
+  "by_relation": {
+    "LOCATED_IN": 139,
+    "PARTNERS_WITH": 178,
+    "PROVIDES": 1159,
+    "SUBSIDIARY_OF": 439,
+    "SUPPLIES_TO": 348,
+    "USES": 214,
+    "OPERATES_IN": 488,
+    "BELONGS_TO_STAGE": 23
+  },
+  "by_source_combination": {
+    "SEC+WIKIPEDIA": 589,
+    "WIKIPEDIA": 1188,
+    "SEC": 1211
+  },
+  "conflict_relations": 8,
+  "time_or_scope_flagged_relations": 144,
+  "quote_text_included": false,
+  "pipeline_source_included": false,
+  "both_source_percent": 19.712182061579654,
+  "documents_with_active_claims": 128
+}

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "claim_provenance.jsonl record",
+  "type": "object",
+  "required": [
+    "claim_id",
+    "document_id",
+    "extractor_version",
+    "object_entity_id",
+    "prompt_version",
+    "publication_date",
+    "relation",
+    "resolution_score",
+    "source",
+    "subject_entity_id"
+  ],
+  "properties": {
+    "claim_id": {
+      "type": "string",
+      "description": "Evidence-record identifier; quotation text is not included in this package."
+    },
+    "document_id": {
+      "type": "string",
+      "description": "Document identifier used to join provenance."
+    },
+    "extractor_version": {
+      "type": "string",
+      "description": "Recorded extraction/recovery version label."
+    },
+    "object_entity_id": {
+      "type": "string",
+      "description": "Resolved claim object entity ID, before inverse/symmetric fusion orientation."
+    },
+    "prompt_version": {
+      "type": "string",
+      "description": "Recorded prompt label or not_applicable for recovery."
+    },
+    "publication_date": {
+      "type": "string",
+      "description": "Source observation date as recorded; empty string means unknown, not current validity."
+    },
+    "relation": {
+      "type": "string",
+      "description": "Predicate; direction is described in the relation table.",
+      "enum": [
+        "BELONGS_TO_STAGE",
+        "CUSTOMER_OF",
+        "LOCATED_IN",
+        "OPERATES_IN",
+        "PARTNERS_WITH",
+        "PROVIDES",
+        "SUBSIDIARY_OF",
+        "SUPPLIES_TO",
+        "USES"
+      ]
+    },
+    "resolution_score": {
+      "type": "number",
+      "description": "Resolver heuristic; not validated correctness probability."
+    },
+    "source": {
+      "type": "string",
+      "description": "Claims use uppercase SEC/WIKIPEDIA; documents retain lowercase sec/wikipedia.",
+      "enum": [
+        "SEC",
+        "WIKIPEDIA"
+      ]
+    },
+    "subject_entity_id": {
+      "type": "string",
+      "description": "Resolved claim subject entity ID, before inverse/symmetric fusion orientation."
+    }
+  },
+  "additionalProperties": false
+}

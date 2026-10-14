@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "edge_scores.jsonl record",
+  "type": "object",
+  "required": [
+    "confidence",
+    "confidence_score",
+    "edge_id",
+    "interpretation",
+    "publisher_groups"
+  ],
+  "properties": {
+    "confidence": {
+      "type": "string",
+      "description": "Heuristic HIGH/MEDIUM/LOW label; not a calibrated correctness probability.",
+      "enum": [
+        "HIGH",
+        "LOW",
+        "MEDIUM"
+      ]
+    },
+    "confidence_score": {
+      "type": "number",
+      "description": "Heuristic evidence-support score; not a calibrated factual probability."
+    },
+    "edge_id": {
+      "type": "string",
+      "description": "Identifier for a fused relation."
+    },
+    "interpretation": {
+      "type": "string",
+      "description": "Text explaining the score limitation."
+    },
+    "publisher_groups": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Issuer-level SEC groups plus Wikipedia group; independence is not proven."
+    }
+  },
+  "additionalProperties": false
+}
