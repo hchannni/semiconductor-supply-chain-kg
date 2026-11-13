@@ -1,13 +1,17 @@
-# Graph explorer
+# Pipeline (reference code)
 
-`index.html` is a single-file, offline viewer for release 2026-10-13: Explore (search a company, browse its
-suppliers, customers and offerings), Analyze, and Accuracy tabs. The graph is embedded in the page; the only external
-dependency is D3 from cdnjs.
+Code used to build the SEC portion of release 2026-10-13, and the resolution / canonicalization / fusion stages
+that turned the Wikipedia and SEC claims into the graph. It is kept for transparency and has not been re-run since that
+release. Running it again needs API keys and will not reproduce the release byte-for-byte: the LLM outputs were cached
+and the cache is not part of this repository.
 
-Open it directly in a browser, or enable GitHub Pages for this repo and visit `/site/`.
+| Folder | What it does |
+|---|---|
+| `sec/` | SEC EDGAR 10-K / 20-F filings → sections → chunks → LLM claim extraction and validation → audit sample |
+| `fusion/` | Wikipedia + SEC claims → company resolution → offering canonicalization → fused edges → ETO evaluation |
 
-Each edge lists its source documents (SEC filing or a pinned Wikipedia revision) and the extracted claim. The
-evidence sentences themselves are not embedded, matching the release, which excludes quotation text; follow the
-document link to read the source.
+Not included: intermediate data, model caches, ETO tables (CC BY-NC, downloaded at run time for evaluation only),
+the Wikipedia extraction, and the shared ontology, schemas and validators written by a teammate (imported as
+`person1export/`; see `sec/README.md`).
 
-Built by Roope Laurila.
+Author of this folder: Roope Laurila.
